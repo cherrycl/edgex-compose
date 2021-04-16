@@ -283,7 +283,6 @@ services:
     volumes:
     - db-data:/data:z
   device-modbus:
-    command: --registry --confdir=CONF_DIR_PLACE_HOLDER
     container_name: edgex-device-modbus
     depends_on:
     - consul
@@ -315,8 +314,6 @@ services:
     security_opt:
     - no-new-privileges:true
     user: 2002:2001
-    volumes:
-    - PROFILE_VOLUME_PLACE_HOLDER:CONF_DIR_PLACE_HOLDER:z
   device-rest:
     container_name: edgex-device-rest
     depends_on:
@@ -350,7 +347,6 @@ services:
     - no-new-privileges:true
     user: 2002:2001
   device-virtual:
-    command: --registry --confdir=CONF_DIR_PLACE_HOLDER
     container_name: edgex-device-virtual
     depends_on:
     - consul
@@ -378,12 +374,10 @@ services:
       edgex-network: {}
     ports:
     - 127.0.0.1:49990:49990/tcp
-    read_only: true
+    read_only: false
     security_opt:
     - no-new-privileges:true
     user: 2002:2001
-    volumes:
-    - PROFILE_VOLUME_PLACE_HOLDER:CONF_DIR_PLACE_HOLDER:z
   metadata:
     container_name: edgex-core-metadata
     depends_on:

@@ -531,7 +531,7 @@ services:
     - redis-config:/run/redis/conf:z
     - /tmp/edgex/secrets/edgex-security-bootstrap-redis:/tmp/edgex/secrets/edgex-security-bootstrap-redis:ro,z
   device-modbus:
-    command: --registry --confdir=CONF_DIR_PLACE_HOLDER
+    command: /device-modbus -cp=consul.http://edgex-core-consul:8500 --registry --confdir=/res
     container_name: edgex-device-modbus
     depends_on:
     - consul
@@ -590,7 +590,6 @@ services:
     volumes:
     - edgex-init:/edgex-init:ro,z
     - /tmp/edgex/secrets/device-modbus:/tmp/edgex/secrets/device-modbus:ro,z
-    - PROFILE_VOLUME_PLACE_HOLDER:CONF_DIR_PLACE_HOLDER:z
   device-rest:
     command: /device-rest-go -cp=consul.http://edgex-core-consul:8500 --registry --confdir=/res
     container_name: edgex-device-rest
@@ -652,7 +651,7 @@ services:
     - edgex-init:/edgex-init:ro,z
     - /tmp/edgex/secrets/device-rest:/tmp/edgex/secrets/device-rest:ro,z
   device-virtual:
-    command: --registry --confdir=CONF_DIR_PLACE_HOLDER
+    command: /device-virtual -cp=consul.http://edgex-core-consul:8500 --registry --confdir=/res
     container_name: edgex-device-virtual
     depends_on:
     - consul
@@ -704,14 +703,13 @@ services:
       edgex-network: {}
     ports:
     - 127.0.0.1:49990:49990/tcp
-    read_only: true
+    read_only: false
     security_opt:
     - no-new-privileges:true
     user: 2002:2001
     volumes:
     - edgex-init:/edgex-init:ro,z
     - /tmp/edgex/secrets/device-virtual:/tmp/edgex/secrets/device-virtual:ro,z
-    - PROFILE_VOLUME_PLACE_HOLDER:CONF_DIR_PLACE_HOLDER:z
   kong:
     container_name: kong
     depends_on:
