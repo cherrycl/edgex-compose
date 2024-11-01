@@ -1218,8 +1218,8 @@ services:
         condition: service_started
         required: true
     environment:
-      EDGEX_ADD_KNOWN_SECRETS: message-bus[app-rules-engine],message-bus[app-http-export],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
-      EDGEX_ADD_SECRETSTORE_TOKENS: app-http-export,app-mqtt-export,app-functional-tests,app-scalability-test-mqtt-export
+      EDGEX_ADD_KNOWN_SECRETS: message-bus[app-rules-engine],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
+      EDGEX_ADD_SECRETSTORE_TOKENS: app-rules-engine,app-mqtt-export
       EDGEX_GROUP: "2001"
       EDGEX_SECURITY_SECRET_STORE: "true"
       EDGEX_USER: "2002"

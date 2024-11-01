@@ -1120,7 +1120,7 @@ services:
         condition: service_started
         required: true
     environment:
-      EDGEX_ADD_KNOWN_SECRETS: postgres[app-rules-engine],message-bus[app-rules-engine],postgres[device-rest],message-bus[device-rest],postgres[device-virtual],message-bus[device-virtual]
+      EDGEX_ADD_KNOWN_SECRETS: postgres[app-rules-engine],message-bus[app-rules-engine],message-bus[device-rest],message-bus[device-virtual]
       EDGEX_ADD_SECRETSTORE_TOKENS: ""
       EDGEX_GROUP: "2001"
       EDGEX_SECURITY_SECRET_STORE: "true"
