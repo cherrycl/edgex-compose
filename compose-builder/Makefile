@@ -154,9 +154,9 @@ ifeq (ds-onvif-camera, $(filter ds-onvif-camera,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-onvif-camera
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-onvif-camera],message-bus[device-onvif-camera]
+			KNOWN_SECRETS_LIST:=message-bus[device-onvif-camera]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-onvif-camera],message-bus[device-onvif-camera]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-onvif-camera]
 		endif
 		PROXY_ROUTE:=device-onvif-camera.http://edgex-device-onvif-camera:59984
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -182,9 +182,9 @@ ifeq (ds-usb-camera, $(filter ds-usb-camera,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-usb-camera
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-usb-camera],message-bus[device-usb-camera]
+			KNOWN_SECRETS_LIST:=message-bus[device-usb-camera]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-usb-camera],message-bus[device-usb-camera]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-usb-camera]
 		endif
 		PROXY_ROUTE:=device-usb-camera.http://edgex-device-usb-camera:59983
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -210,9 +210,9 @@ ifeq (ds-bacnet-ip, $(filter ds-bacnet-ip,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-bacnet-ip
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-bacnet-ip],message-bus[device-bacnet-ip]
+			KNOWN_SECRETS_LIST:=message-bus[device-bacnet-ip]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-bacnet-ip],message-bus[device-bacnet-ip]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-bacnet-ip]
 		endif
 		PROXY_ROUTE:=device-bacnet-ip.http://edgex-device-bacnet-ip:59980
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -239,9 +239,9 @@ ifeq (ds-bacnet-mstp, $(filter ds-bacnet-mstp,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-bacnet-mstp
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-bacnet-mstp],message-bus[device-bacnet-mstp]
+			KNOWN_SECRETS_LIST:=message-bus[device-bacnet-mstp]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-bacnet-mstp],message-bus[device-bacnet-mstp]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-bacnet-mstp]
 		endif
 		PROXY_ROUTE:=device-bacnet-mstp.http://edgex-device-bacnet-mstp:59980
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -268,9 +268,9 @@ ifeq (ds-modbus, $(filter ds-modbus,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-modbus
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-modbus],message-bus[device-modbus]
+			KNOWN_SECRETS_LIST:=message-bus[device-modbus]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-modbus],message-bus[device-modbus]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-modbus]
 		endif
 		PROXY_ROUTE:=device-modbus.http://edgex-device-modbus:59901
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -300,9 +300,9 @@ ifeq (ds-mqtt, $(filter ds-mqtt,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-mqtt
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-mqtt],message-bus[device-mqtt]
+			KNOWN_SECRETS_LIST:=message-bus[device-mqtt]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-mqtt],message-bus[device-mqtt]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-mqtt]
 		endif
 		PROXY_ROUTE:=device-mqtt.http://edgex-device-mqtt:59982
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -329,9 +329,9 @@ ifeq (ds-rest, $(filter ds-rest,$(ARGS)))
 	ifneq (no-secty, $(filter no-secty,$(ARGS)))
 		# Device-rest's token is created by default, so not setting TOKEN_LIST
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-rest],message-bus[device-rest]
+			KNOWN_SECRETS_LIST:=message-bus[device-rest]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-rest],message-bus[device-rest]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-rest]
 		endif
 		PROXY_ROUTE:=device-rest.http://edgex-device-rest:59986
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -357,9 +357,9 @@ ifeq (ds-snmp, $(filter ds-snmp,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-snmp
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-snmp],message-bus[device-snmp]
+			KNOWN_SECRETS_LIST:=message-bus[device-snmp]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-snmp],message-bus[device-snmp]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-snmp]
 		endif
 		PROXY_ROUTE:=device-snmp.http://edgex-device-snmp:59993
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -381,9 +381,9 @@ ifeq (ds-virtual, $(filter ds-virtual,$(ARGS)))
 	ifneq (no-secty, $(filter no-secty,$(ARGS)))
 		# Device-virtual's token is created by default, so not setting TOKEN_LIST
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-virtual],message-bus[device-virtual]
+			KNOWN_SECRETS_LIST:=message-bus[device-virtual]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-virtual],message-bus[device-virtual]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-virtual]
 		endif
 		# Device-virtual's proxy is created by default, so not setting EXTRA_PROXY_ROUTE_LIST
 		extension_file:= $(shell ZERO_TRUST="$(MAKE_ZERO_TRUST)" GEN_EXT_DIR="$(GEN_EXT_DIR)" ./gen_secure_compose_ext.sh device-virtual)
@@ -404,9 +404,9 @@ ifeq (ds-llrp, $(filter ds-llrp,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-rfid-llrp
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-rfid-llrp],message-bus[device-rfid-llrp]
+			KNOWN_SECRETS_LIST:=message-bus[device-rfid-llrp]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-rfid-llrp],message-bus[device-rfid-llrp]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-rfid-llrp]
 		endif
 		PROXY_ROUTE:=device-rfid-llrp.http://edgex-device-rfid-llrp:59989
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -432,9 +432,9 @@ ifeq (ds-coap, $(filter ds-coap,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-coap
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-coap],message-bus[device-coap]
+			KNOWN_SECRETS_LIST:=message-bus[device-coap]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-coap],message-bus[device-coap]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-coap]
 		endif
 		PROXY_ROUTE:=device-coap.http://edgex-device-coap:59988
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -460,9 +460,9 @@ ifeq (ds-gpio, $(filter ds-gpio,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-gpio
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-gpio],message-bus[device-gpio]
+			KNOWN_SECRETS_LIST:=message-bus[device-gpio]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-gpio],message-bus[device-gpio]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-gpio]
 		endif
 		PROXY_ROUTE:=device-gpio.http://edgex-device-gpio:59910
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -488,9 +488,9 @@ ifeq (ds-uart, $(filter ds-uart,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-uart
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-uart],message-bus[device-uart]
+			KNOWN_SECRETS_LIST:=message-bus[device-uart]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-uart],message-bus[device-uart]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-uart]
 		endif
 		PROXY_ROUTE:=device-uart.http://edgex-device-uart:59995
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -516,9 +516,9 @@ ifeq (ds-s7, $(filter ds-s7,$(ARGS)))
 			TOKEN_LIST:=$(TOKEN_LIST),device-s7
 		endif
 		ifeq ($(KNOWN_SECRETS_LIST),)
-			KNOWN_SECRETS_LIST:=postgres[device-s7],message-bus[device-s7]
+			KNOWN_SECRETS_LIST:=message-bus[device-s7]
 		else
-			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),postgres[device-s7],message-bus[device-s7]
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[device-s7]
 		endif
 		PROXY_ROUTE:=device-s7.http://edgex-device-s7:59994
 		ifeq ($(EXTRA_PROXY_ROUTE_LIST),)
@@ -819,7 +819,7 @@ ifeq (taf-secty, $(filter taf-secty,$(ARGS)))
 	TOKEN_LIST:=app-http-export,app-mqtt-export,app-functional-tests,app-scalability-test-mqtt-export,app-sample,device-modbus,app-external-mqtt-trigger,device-onvif-camera
 	# Note that the services in this list should be separated by ';', but that causes issues with build scripts, so
 	# have to list them individually.
-	KNOWN_SECRETS_LIST:=postgres[app-rules-engine],postgres[app-http-export],postgres[app-mqtt-export],postgres[app-scalability-test-mqtt-export],postgres[app-sample],postgres[device-modbus],postgres[device-rest],postgres[device-virtual],postgres[device-onvif-camera]
+	KNOWN_SECRETS_LIST:=postgres[app-rules-engine],postgres[app-http-export],postgres[app-mqtt-export],postgres[app-scalability-test-mqtt-export],postgres[app-sample]
 	KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[app-rules-engine],message-bus[app-http-export],message-bus[app-mqtt-export],message-bus[app-external-mqtt-trigger],message-bus[app-scalability-test-mqtt-export],message-bus[app-sample],message-bus[device-modbus],message-bus[device-rest],message-bus[device-virtual],message-bus[device-onvif-camera]
 	EXTRA_PROXY_ROUTE_LIST:=device-modbus.http://edgex-device-modbus:59901
 
@@ -901,11 +901,11 @@ else
     else
     	# Build compose for TAF secure performance testing (ignore all other compose file options)
     	ifeq (taf-perf, $(filter taf-perf,$(ARGS)))
-			TOKEN_LIST:=app-http-export,app-mqtt-export,app-functional-tests,app-scalability-test-mqtt-export
+			TOKEN_LIST:=app-rules-engine,app-mqtt-export
 			# Note that the services in this list should be separated by ';', but that causes issues with build scripts, so
 			# have to list them individually.
-			KNOWN_SECRETS_LIST:=postgres[app-rules-engine],postgres[app-http-export],postgres[app-mqtt-export],postgres[device-rest],postgres[device-virtual]
-			KNOWN_SECRETS_LIST:=message-bus[app-rules-engine],message-bus[app-http-export],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
+			KNOWN_SECRETS_LIST:=postgres[app-rules-engine],postgres[app-mqtt-export]
+			KNOWN_SECRETS_LIST:=message-bus[app-rules-engine],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
 			EXTRA_PROXY_ROUTE_LIST:=device-modbus.http://edgex-device-modbus:59901
 
     		COMPOSE_FILES:= \
