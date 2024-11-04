@@ -905,8 +905,8 @@ else
 			# Note that the services in this list should be separated by ';', but that causes issues with build scripts, so
 			# have to list them individually.
 			KNOWN_SECRETS_LIST:=postgres[app-rules-engine],postgres[app-mqtt-export]
-			KNOWN_SECRETS_LIST:=message-bus[app-rules-engine],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
-			EXTRA_PROXY_ROUTE_LIST:=device-modbus.http://edgex-device-modbus:59901
+			KNOWN_SECRETS_LIST:=$(KNOWN_SECRETS_LIST),message-bus[app-rules-engine],message-bus[app-mqtt-export],message-bus[device-rest],message-bus[device-virtual]
+			EXTRA_PROXY_ROUTE_LIST:=device-modbus.http://edgex-device-modbus:59901,device-rest.http:\/\/edgex-device-rest:59986
 
     		COMPOSE_FILES:= \
 				-f docker-compose-base.yml \
@@ -917,8 +917,8 @@ else
 				-f add-asc-mqtt-export.yml \
 				-f add-device-virtual.yml \
 				-f add-device-rest.yml \
-				-f add-mqtt-broker-mosquitto.yml \
-				-f add-taf-mqtt-broker-mosquitto.yml \
+				-f ${BROKER_YAML} \
+				-f ${TAF_BROKER_YAML} \
 				-f add-delayed-start-services.yml \
 				-f add-postgres.yml \
 				-f add-secure-postgres.yml
