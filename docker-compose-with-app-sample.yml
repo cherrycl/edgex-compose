@@ -917,7 +917,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-kuiper
-    image: lfedge/ekuiper:v1.14.0-alpha.2
+    image: lfedge/ekuiper:v2.1.0-alpine
     networks:
       edgex-network: null
     ports:
@@ -978,7 +978,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: "4190235525120"
+          memory: "4190239719424"
     entrypoint:
       - /edgex-init/secretstore_wait_install.sh
     environment:
@@ -1002,7 +1002,7 @@ services:
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-secret-store
     image: openbao/openbao:2.1.1
-    memswap_limit: "4190235525120"
+    memswap_limit: "4190239719424"
     networks:
       edgex-network: null
     ports:
