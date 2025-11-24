@@ -71,7 +71,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-app-rules-engine
-    image: edgexfoundry/app-service-configurable:4.0.0
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -150,7 +150,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-core-command
-    image: edgexfoundry/core-command:4.0.0
+    image: nexus3.edgexfoundry.org:10004/core-command:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -228,7 +228,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-core-common-config-bootstrapper
-    image: edgexfoundry/core-common-config-bootstrapper:4.0.0
+    image: nexus3.edgexfoundry.org:10004/core-common-config-bootstrapper:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -299,7 +299,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-core-data
-    image: edgexfoundry/core-data:4.0.0
+    image: nexus3.edgexfoundry.org:10004/core-data:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -368,7 +368,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-core-keeper
-    image: edgexfoundry/core-keeper:4.0.0
+    image: nexus3.edgexfoundry.org:10004/core-keeper:odessa
     networks:
       edgex-network: null
     ports:
@@ -443,7 +443,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-core-metadata
-    image: edgexfoundry/core-metadata:4.0.0
+    image: nexus3.edgexfoundry.org:10004/core-metadata:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -587,7 +587,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-device-rest
-    image: edgexfoundry/device-rest:4.0.0
+    image: nexus3.edgexfoundry.org:10004/device-rest:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -659,7 +659,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-device-virtual
-    image: edgexfoundry/device-virtual:4.0.0
+    image: nexus3.edgexfoundry.org:10004/device-virtual:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -868,7 +868,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: "4190168416256"
+          memory: "4189904175104"
     entrypoint:
       - /edgex-init/secretstore_wait_install.sh
     environment:
@@ -892,7 +892,7 @@ services:
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-secret-store
     image: openbao/openbao:2.1.1
-    memswap_limit: "4190168416256"
+    memswap_limit: "4189904175104"
     networks:
       edgex-network: null
     ports:
@@ -939,7 +939,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-security-bootstrapper
-    image: edgexfoundry/security-bootstrapper:4.0.0
+    image: nexus3.edgexfoundry.org:10004/security-bootstrapper:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -992,7 +992,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-security-secretstore-setup
-    image: edgexfoundry/security-secretstore-setup:4.0.0
+    image: nexus3.edgexfoundry.org:10004/security-secretstore-setup:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -1078,7 +1078,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-support-notifications
-    image: edgexfoundry/support-notifications:4.0.0
+    image: nexus3.edgexfoundry.org:10004/support-notifications:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -1149,7 +1149,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-support-scheduler
-    image: edgexfoundry/support-scheduler:4.0.0
+    image: nexus3.edgexfoundry.org:10004/support-scheduler:odessa
     networks:
       edgex-network: null
     ports:
@@ -1241,7 +1241,7 @@ services:
       STAGEGATE_SECRETSTORESETUP_TOKENS_READYPORT: "54322"
       STAGEGATE_WAITFOR_TIMEOUT: 60s
     hostname: edgex-ui-go
-    image: edgexfoundry/edgex-ui:4.0.0
+    image: nexus3.edgexfoundry.org:10004/edgex-ui:odessa
     networks:
       edgex-network: null
     ports:

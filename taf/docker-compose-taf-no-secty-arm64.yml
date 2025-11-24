@@ -55,7 +55,7 @@ services:
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_BROKERADDRESS: MQTT_BROKER_ADDRESS_PLACE_HOLDER
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_TOPIC: edgex-export
     hostname: edgex-app-external-mqtt-trigger
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -96,7 +96,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-app-functional-tests
     hostname: edgex-app-functional-tests
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -140,7 +140,7 @@ services:
       WRITABLE_LOGLEVEL: INFO
       WRITABLE_PIPELINE_FUNCTIONS_HTTPEXPORT_PARAMETERS_URL: http://EXPORT_HOST_PLACE_HOLDER:7770
     hostname: edgex-app-http-export
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -184,7 +184,7 @@ services:
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_BROKERADDRESS: MQTT_BROKER_ADDRESS_PLACE_HOLDER
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_TOPIC: edgex-events
     hostname: edgex-app-mqtt-export
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -225,7 +225,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-app-rules-engine
     hostname: edgex-app-rules-engine
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -269,7 +269,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-app-sample
     hostname: edgex-app-sample
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -316,7 +316,7 @@ services:
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_CLIENTID: app-scalability-test-mqtt-export
       WRITABLE_PIPELINE_FUNCTIONS_MQTTEXPORT_PARAMETERS_TOPIC: edgex-events
     hostname: edgex-app-scalability-test-mqtt-export
-    image: nexus3.edgexfoundry.org:10004/app-service-configurable:odessa
+    image: nexus3.edgexfoundry.org:10004/app-service-configurable-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -358,7 +358,7 @@ services:
       EXTERNALMQTT_URL: tcp://edgex-mqtt-broker:1883
       SERVICE_HOST: edgex-core-command
     hostname: edgex-core-command
-    image: nexus3.edgexfoundry.org:10004/core-command:odessa
+    image: nexus3.edgexfoundry.org:10004/core-command-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -397,7 +397,7 @@ services:
       DEVICE_SERVICES_CLIENTS_CORE_METADATA_HOST: edgex-core-metadata
       EDGEX_SECURITY_SECRET_STORE: "false"
     hostname: edgex-core-common-config-bootstrapper
-    image: nexus3.edgexfoundry.org:10004/core-common-config-bootstrapper:odessa
+    image: nexus3.edgexfoundry.org:10004/core-common-config-bootstrapper-arm64:odessa
     networks:
       edgex-network: null
     read_only: true
@@ -430,7 +430,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-core-data
     hostname: edgex-core-data
-    image: nexus3.edgexfoundry.org:10004/core-data:odessa
+    image: nexus3.edgexfoundry.org:10004/core-data-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -468,7 +468,7 @@ services:
       MESSAGEBUS_TYPE: mqtt
       SERVICE_HOST: edgex-core-keeper
     hostname: edgex-core-keeper
-    image: nexus3.edgexfoundry.org:10004/core-keeper:odessa
+    image: nexus3.edgexfoundry.org:10004/core-keeper-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -505,7 +505,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-core-metadata
     hostname: edgex-core-metadata
-    image: nexus3.edgexfoundry.org:10004/core-metadata:odessa
+    image: nexus3.edgexfoundry.org:10004/core-metadata-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -584,7 +584,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-device-modbus
     hostname: edgex-device-modbus
-    image: nexus3.edgexfoundry.org:10004/device-modbus:odessa
+    image: nexus3.edgexfoundry.org:10004/device-modbus-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -634,7 +634,7 @@ services:
       MESSAGEBUS_HOST: edgex-mqtt-broker
       SERVICE_HOST: edgex-device-onvif-camera
     hostname: edgex-device-onvif-camera
-    image: nexus3.edgexfoundry.org:10004/device-onvif-camera:odessa
+    image: nexus3.edgexfoundry.org:10004/device-onvif-camera-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -677,7 +677,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-device-rest
     hostname: edgex-device-rest
-    image: nexus3.edgexfoundry.org:10004/device-rest:odessa
+    image: nexus3.edgexfoundry.org:10004/device-rest-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -721,7 +721,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-device-virtual
     hostname: edgex-device-virtual
-    image: nexus3.edgexfoundry.org:10004/device-virtual:odessa
+    image: nexus3.edgexfoundry.org:10004/device-virtual-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -898,7 +898,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-support-notifications
     hostname: edgex-support-notifications
-    image: nexus3.edgexfoundry.org:10004/support-notifications:odessa
+    image: nexus3.edgexfoundry.org:10004/support-notifications-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -938,7 +938,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-support-scheduler
     hostname: edgex-support-scheduler
-    image: nexus3.edgexfoundry.org:10004/support-scheduler:odessa
+    image: nexus3.edgexfoundry.org:10004/support-scheduler-arm64:odessa
     networks:
       edgex-network: null
     ports:
@@ -965,7 +965,7 @@ services:
       EDGEX_SECURITY_SECRET_STORE: "false"
       SERVICE_HOST: edgex-ui-go
     hostname: edgex-ui-go
-    image: nexus3.edgexfoundry.org:10004/edgex-ui:odessa
+    image: nexus3.edgexfoundry.org:10004/edgex-ui-arm64:odessa
     networks:
       edgex-network: null
     ports:
